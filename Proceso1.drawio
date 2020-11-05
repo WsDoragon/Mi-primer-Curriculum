@@ -1,6 +1,6 @@
-<mxfile host="65bd71144e" modified="2020-11-04T19:52:29.100Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.50.1 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" etag="BGB2ZE6b5_AQoDagirSy" version="13.6.5">
+<mxfile host="65bd71144e" modified="2020-11-05T13:36:04.714Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.50.1 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" etag="jcPlDHI0ybPnNKosLIja" version="13.6.5">
     <diagram id="Gv7BJDksZkl1c3pn_F-E" name="Page-1">
-        <mxGraphModel dx="898" dy="634" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1123" dy="792" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -10,7 +10,7 @@
                 <mxCell id="5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="3" target="4" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="15" value="&amp;nbsp;{ &quot;CV&quot; : 1 , &quot;nombre&quot;: &quot;pepito&quot;, &quot;rut&quot;: 90.999.999-9,&lt;br&gt;&quot;apellido&quot;: &quot;Perez&quot;,&amp;nbsp; &quot;telefono&quot;: 9 **** ****,&lt;br&gt;&quot;email&quot;: &quot;***@gmail.com&quot;, &quot;experiencia&quot;: &quot; &quot; }&amp;nbsp;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="5">
+                <mxCell id="15" value="&amp;nbsp;{ &quot;id_usuario&quot; : &quot; hjds@hfasd.com &quot;&amp;nbsp;}&amp;nbsp;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="5" vertex="1" connectable="0">
                     <mxGeometry x="0.1103" y="-2" relative="1" as="geometry">
                         <mxPoint x="38.4" y="2" as="offset"/>
                     </mxGeometry>
@@ -27,10 +27,10 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="4" value="/api/crear_curriculum" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=0;" parent="1" vertex="1">
+                <mxCell id="4" value="/api/obtener_curriculum_base" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=0;" parent="1" vertex="1">
                     <mxGeometry x="40" y="140" width="180" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="14" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;startFill=0;rounded=0;strokeWidth=2;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="7" target="3">
+                <mxCell id="14" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;startFill=0;rounded=0;strokeWidth=2;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="7" target="3" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="790" y="260" as="targetPoint"/>
                         <Array as="points">
@@ -39,17 +39,17 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="7" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+                <mxCell id="7" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
                     <mxGeometry x="870" y="230" width="30" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="9" value="#CV = 1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+                <mxCell id="9" value="#CV = 1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
                     <mxGeometry x="855" y="320" width="60" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="10" value="/Seleccionar" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+                <mxCell id="10" value="/Seleccionar" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
                     <mxGeometry x="747" y="160" width="80" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="17" value="{ &quot;cv_formato1&quot; }" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
-                    <mxGeometry x="350" y="290" width="100" height="20" as="geometry"/>
+                <mxCell id="17" value="&lt;font color=&quot;#ffffff&quot;&gt;&lt;span style=&quot;background-color: transparent ; font-size: 11pt ; font-family: &amp;#34;arial&amp;#34; ; vertical-align: baseline&quot;&gt;r&lt;/span&gt;&lt;span style=&quot;background-color: transparent ; font-size: 11pt ; font-family: &amp;#34;arial&amp;#34; ; vertical-align: baseline&quot;&gt;esponse&lt;/span&gt;&lt;/font&gt;&lt;br&gt;&lt;span id=&quot;docs-internal-guid-a794c043-7fff-87d5-0e26-716a0c0cd923&quot;&gt;&lt;p dir=&quot;ltr&quot; style=&quot;line-height: 1.3800000000000001 ; margin-top: 0pt ; margin-bottom: 0pt&quot;&gt;&lt;span style=&quot;font-size: 11pt ; font-family: &amp;#34;arial&amp;#34; ; background-color: transparent ; vertical-align: baseline&quot;&gt;&lt;font color=&quot;#ffffff&quot;&gt;{&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p dir=&quot;ltr&quot; style=&quot;line-height: 1.3800000000000001 ; margin-top: 0pt ; margin-bottom: 0pt&quot;&gt;&lt;span style=&quot;font-size: 11pt ; font-family: &amp;#34;arial&amp;#34; ; background-color: transparent ; vertical-align: baseline&quot;&gt;&lt;font color=&quot;#ffffff&quot;&gt;&amp;nbsp;&amp;nbsp;&quot;id_usuario&quot; : &quot;fsffs@sfsff.afa&quot;,&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p dir=&quot;ltr&quot; style=&quot;line-height: 1.3800000000000001 ; margin-top: 0pt ; margin-bottom: 0pt&quot;&gt;&lt;span style=&quot;font-size: 11pt ; font-family: &amp;#34;arial&amp;#34; ; background-color: transparent ; vertical-align: baseline&quot;&gt;&lt;font color=&quot;#ffffff&quot;&gt;&amp;nbsp;&amp;nbsp;&quot;nombre&quot; : &quot;daniel&quot;,&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p dir=&quot;ltr&quot; style=&quot;line-height: 1.3800000000000001 ; margin-top: 0pt ; margin-bottom: 0pt&quot;&gt;&lt;span style=&quot;font-size: 11pt ; font-family: &amp;#34;arial&amp;#34; ; background-color: transparent ; vertical-align: baseline&quot;&gt;&lt;font color=&quot;#ffffff&quot;&gt;&amp;nbsp;&amp;nbsp;&quot;apellido&quot; : &quot;guerra&quot;,&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p dir=&quot;ltr&quot; style=&quot;line-height: 1.3800000000000001 ; margin-top: 0pt ; margin-bottom: 0pt&quot;&gt;&lt;span style=&quot;font-size: 11pt ; font-family: &amp;#34;arial&amp;#34; ; background-color: transparent ; vertical-align: baseline&quot;&gt;&lt;font color=&quot;#ffffff&quot;&gt;&amp;nbsp;&amp;nbsp;&quot;telefono&quot; : 624612572,&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p dir=&quot;ltr&quot; style=&quot;line-height: 1.3800000000000001 ; margin-top: 0pt ; margin-bottom: 0pt&quot;&gt;&lt;span style=&quot;font-size: 11pt ; font-family: &amp;#34;arial&amp;#34; ; background-color: transparent ; vertical-align: baseline&quot;&gt;&lt;font color=&quot;#ffffff&quot;&gt;&amp;nbsp;&amp;nbsp;&quot;direccion&quot; : &quot;&quot;,&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p dir=&quot;ltr&quot; style=&quot;line-height: 1.3800000000000001 ; margin-top: 0pt ; margin-bottom: 0pt&quot;&gt;&lt;span style=&quot;font-size: 11pt ; font-family: &amp;#34;arial&amp;#34; ; background-color: transparent ; vertical-align: baseline&quot;&gt;&lt;font color=&quot;#ffffff&quot;&gt;&amp;nbsp;&amp;nbsp;&quot;email&quot; : &quot;&quot;,&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p dir=&quot;ltr&quot; style=&quot;line-height: 1.3800000000000001 ; margin-top: 0pt ; margin-bottom: 0pt&quot;&gt;&lt;span style=&quot;font-size: 11pt ; font-family: &amp;#34;arial&amp;#34; ; background-color: transparent ; vertical-align: baseline&quot;&gt;&lt;font color=&quot;#ffffff&quot;&gt;&amp;nbsp;&amp;nbsp;&quot;tipo_formacion&quot; : {&quot;TP&quot;: true, &quot;CH&quot;: false},&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p dir=&quot;ltr&quot; style=&quot;line-height: 1.3800000000000001 ; margin-top: 0pt ; margin-bottom: 0pt&quot;&gt;&lt;span style=&quot;font-size: 11pt ; font-family: &amp;#34;arial&amp;#34; ; background-color: transparent ; vertical-align: baseline&quot;&gt;&lt;font color=&quot;#ffffff&quot;&gt;&amp;nbsp;&amp;nbsp;&quot;intereses&quot; : &quot;&quot;&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;p dir=&quot;ltr&quot; style=&quot;line-height: 1.3800000000000001 ; margin-top: 0pt ; margin-bottom: 0pt&quot;&gt;&lt;span style=&quot;font-size: 11pt ; font-family: &amp;#34;arial&amp;#34; ; background-color: transparent ; vertical-align: baseline&quot;&gt;&lt;font color=&quot;#ffffff&quot;&gt;}&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/span&gt;&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+                    <mxGeometry x="250" y="320" width="300" height="230" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
