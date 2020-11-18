@@ -32,11 +32,11 @@ export default function IndexPage() {
             rounded="lg"
           >
             Esta es una pagina web creada para apoyar a personas que requieren
-            de ayuda para crear su Curriculum para postular a trabajos
+            de ayuda para crear su Curriculum para postular a trabajos.
           </Box>
         </Center>
         <Center>
-          <Link href="https://nextjs.org/docs">
+          <Link href="/Select">
             <Button> Quiero comenzar mi CV</Button>
           </Link>
         </Center>
