@@ -21,7 +21,7 @@ export default function IndexPage() {
   return (
     <>
       <Stack spacing="45px" padding="10px">
-        <Heading>Mi primer Curriculum</Heading>
+        <Heading align="center">Mi primer Curriculum</Heading>
         <Center>
           <Box
             p="6"
@@ -31,8 +31,8 @@ export default function IndexPage() {
             borderColor="black"
             rounded="lg"
           >
-            Esta es una pagina web creada para apoyar a personas que requieren
-            de ayuda para crear su Curriculum para postular a trabajos.
+            Esta es una pagina web diseñada para ayudarte a la confección de un Curriculum Estadar y
+            tu informacion sera unicamente usada con este proposito. Si estas de acuerdo presiona: "Quiero comenzar con mi CV"
           </Box>
         </Center>
         <Center>

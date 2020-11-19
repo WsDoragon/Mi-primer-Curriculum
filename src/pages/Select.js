@@ -13,7 +13,7 @@ const select = () => {
   return (
     <>
       <Center>
-        <Box>
+        <Box margin="10">
           <FormControl id="email" isRequired>
             <FormLabel>Email</FormLabel>
             <Input placeholder="email" />
