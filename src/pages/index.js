@@ -9,6 +9,7 @@ import {
   Button,
   Link,
 } from "@chakra-ui/core";
+import {HiShieldCheck} from "react-icons/Hi"
 //import { Center, Square, Circle } from "@chakra-ui/react";
 
 import { ProbandoJavascript } from "../components/ProbandoJavascript";
@@ -37,7 +38,9 @@ export default function IndexPage() {
         </Center>
         <Center>
           <Link href="/Select">
-            <Button> Quiero comenzar mi CV</Button>
+            <Button colorScheme="blue" rightIcon={<HiShieldCheck size="30px"/>}> 
+            Quiero comenzar mi CV
+            </Button>
           </Link>
         </Center>
       </Stack>
