@@ -7,36 +7,17 @@ export const ProbandoAPI = () => {
   const [apiData, setApiData] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const toast = useToast();
+  const { data } = await Axios.post("/api/obtener_curriculum_base", {
+    id_usuario: "bladimirpardom@gmail.com",
+  });
+
   return (
     <>
-      {apiData ? <Text>{apiData}</Text> : null}
-      <Button
-        width="250px"
-        isLoading={isLoading}
-        leftIcon={<MdHttp size="30px" />}
-        onClick={async () => {
-          setIsLoading(true);
-
-          // const { data } = await Axios.post("/api/hello_world", {
-          const { data } = await Axios.post("/api/list", {
-            nombre: "Pablo",
-          });
-          setIsLoading(false);
-
+      {apiData ? <Text>{apiData}</Text> : null}{
           const dataString = JSON.stringify(data);
-
+          // hacer maping del curriculum
           setApiData(dataString);
-
-          toast({
-            status: "success",
-            title: dataString,
-            isClosable: true,
-          });
-        }}
-        colorScheme="teal"
-      >
-        Request to API
-      </Button>
-    </>
+        }    
+  </>
   );
 };

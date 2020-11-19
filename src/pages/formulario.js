@@ -11,12 +11,13 @@ import {
   Link
 } from "@chakra-ui/core";
 import {GiClick} from "react-icons/Gi"
-import { ProbandoInput } from "../components/ProbandoInput";
+import { ProbandoAPI } from "../components/ProbandoAPI";
 
+//recibir el email y obtener el endpoint
 const formulario = () => {
   return (
     <>
-      <ProbandoInput />
+      <ProbandoAPI />
     </>
   );
 };
