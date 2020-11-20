@@ -1,22 +1,5 @@
-import {
-  Heading,
-  Stack,
-  Text,
-  Box,
-  Center,
-  Grid,
-  GridItem,
-  Button,
-  Link,
-} from "@chakra-ui/core";
-import {HiShieldCheck} from "react-icons/Hi"
-//import { Center, Square, Circle } from "@chakra-ui/react";
-
-import { ProbandoJavascript } from "../components/ProbandoJavascript";
-import { ProbandoAPI } from "../components/ProbandoAPI";
-import { ProbandoListas } from "../components/ProbandoListas";
-import { ProbandoInput } from "../components/ProbandoInput";
-import { page1 } from "../components/page1";
+import { Heading, Stack, Box, Center, Button, Link } from "@chakra-ui/react";
+import { HiShieldCheck } from "react-icons/hi";
 
 export default function IndexPage() {
   return (
@@ -32,14 +15,18 @@ export default function IndexPage() {
             borderColor="black"
             rounded="lg"
           >
-            Esta es una pagina web diseñada para ayudarte a la confección de un Curriculum Estadar y
-            tu informacion sera unicamente usada con este proposito. Si estas de acuerdo presiona: "Quiero comenzar con mi CV"
+            Esta es una pagina web diseñada para ayudarte a la confección de un
+            Curriculum Estadar y tu informacion sera unicamente usada con este
+            proposito. Si estas de acuerdo presiona: "Quiero comenzar con mi CV"
           </Box>
         </Center>
         <Center>
           <Link href="/Select">
-            <Button colorScheme="blue" rightIcon={<HiShieldCheck size="30px"/>}> 
-            Quiero comenzar mi CV
+            <Button
+              colorScheme="blue"
+              rightIcon={<HiShieldCheck size="30px" />}
+            >
+              Quiero comenzar mi CV
             </Button>
           </Link>
         </Center>
@@ -47,8 +34,3 @@ export default function IndexPage() {
     </>
   );
 }
-
-//<ProbandoJavascript />
-//<ProbandoAPI />
-//<ProbandoListas />
-//<ProbandoInput />

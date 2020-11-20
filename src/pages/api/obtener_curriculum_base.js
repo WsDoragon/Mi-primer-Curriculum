@@ -7,7 +7,7 @@ import { NextApiResponse, NextApiRequest } from "next";
  */
 export default async (req, res) => {
   let curriculum = {
-    id_usuario: "2423512412",
+    id_usuario: req.body.id_usuario,
     nombre: "juan",
     apellido: "guerra",
     telefono: 624612572,
@@ -41,5 +41,5 @@ export default async (req, res) => {
     capacitaciones: "",
   };
 
-  res.send(JSON.stringify(curriculum));
+  res.send(curriculum);
 };
