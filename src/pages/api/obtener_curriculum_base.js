@@ -12,7 +12,7 @@ export default async (req, res) => {
     apellido: "guerra",
     telefono: 624612572,
     direccion: "",
-    email: "",
+    email: req.body.id_usuario,
     tipo_formacion: "TP", // TP, CH
     intereses: "",
     abilidades: "",

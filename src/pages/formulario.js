@@ -14,14 +14,14 @@ import { useRouter } from "next/router";
 export const getServerSideProps = (ctx) => {
   return {
     props: {
-      email: ctx.query.email,
+      email: ctx.query.email || "",
     },
   };
 };
 
 const formulario = ({ email }) => {
   const { push } = useRouter();
-  const [data, setData] = useState({});
+  const [data, setData] = useState();
   const [loading, setLoading] = useState(true);
   const toast = useToast();
 
