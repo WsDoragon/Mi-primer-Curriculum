@@ -21,7 +21,7 @@ export default function IndexPage() {
           </Box>
         </Center>
         <Center>
-          <Link href="/Select">
+          <Link href="/select">
             <Button
               colorScheme="blue"
               rightIcon={<HiShieldCheck size="30px" />}

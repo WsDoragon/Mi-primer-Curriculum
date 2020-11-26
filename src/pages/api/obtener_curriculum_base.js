@@ -15,7 +15,7 @@ export default async (req, res) => {
     email: req.body.id_usuario,
     tipo_formacion: "TP", // TP, CH
     intereses: "",
-    abilidades: "",
+    habilidades: "",
     experiencia_texto: "",
     experiencia_items: [
       { exp_descripcion: "xxxxx", desde: "13-10-2017", hasta: "15-12-2017" },
@@ -36,7 +36,7 @@ export default async (req, res) => {
       edicion_imagenes: "básico",
     },
     otras_comp_digitales: "",
-    abilidades_blandas: "",
+    habilidades_blandas: "",
     premios: "",
     capacitaciones: "",
   };
