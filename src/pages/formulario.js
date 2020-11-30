@@ -7,6 +7,10 @@ import {
   Input,
   InputGroup,
   InputLeftAddon,
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  FormHelperText,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 //recibir el email y obtener el endpoint
@@ -51,38 +55,41 @@ const formulario = ({ email }) => {
   }, [email]);
 
   return (
+    
     <Stack padding="20px">
       {loading && <Spinner />}
       {data ? (
         <Stack>
-          <InputGroup size="sm">
-            <InputLeftAddon children="Nombre" />
-            <Input
-              borderRadius="0"
-              placeholder="Inserte nombre"
-              value={data.nombre}
-              onChange={({ target: { value } }) => {
+          <InputGroup size="sm" width="50%">
+          <FormControl id="nombre" isRequired>
+            <FormLabel>Nombres: </FormLabel>
+            <Input 
+            placeholder="Inserte Nombres"
+            defaultValue = {data.nombre}
+            onChange={({ target: { value } }) => {
                 setData({
                   ...data,
                   nombre: value,
                 });
               }}
             />
+          </FormControl>
           </InputGroup>
 
-          <InputGroup size="sm">
-            <InputLeftAddon children="Apellido" />
-            <Input
-              borderRadius="0"
-              placeholder="Inserte apellido"
-              defaultValue={data.apellido}
-              onChange={({ target: { value } }) => {
+          <InputGroup size="sm" width="50%">
+          <FormControl id="apellido" isRequired>
+            <FormLabel>Nombres: </FormLabel>
+            <Input 
+            placeholder="Inserte Nombres"
+            defaultValue = {data.nombre}
+            onChange={({ target: { value } }) => {
                 setData({
                   ...data,
-                  apellido: value,
+                  nombre: value,
                 });
               }}
             />
+          </FormControl>
           </InputGroup>
 
           <InputGroup size="sm">
