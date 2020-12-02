@@ -11,6 +11,12 @@ import {
   FormLabel,
   FormErrorMessage,
   FormHelperText,
+  Flex,
+  Heading,
+  RadioGroup,
+  HStack,
+  Radio,
+
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 //recibir el email y obtener el endpoint
@@ -55,43 +61,73 @@ const formulario = ({ email }) => {
   }, [email]);
 
   return (
-    
     <Stack padding="20px">
       {loading && <Spinner />}
+      <Heading align="center"> Formulario: Mi primer Curriculum</Heading>
       {data ? (
         <Stack>
+          <Flex>
           <InputGroup size="sm" width="50%">
-          <FormControl id="nombre" isRequired>
-            <FormLabel>Nombres: </FormLabel>
-            <Input 
-            placeholder="Inserte Nombres"
-            defaultValue = {data.nombre}
-            onChange={({ target: { value } }) => {
+            <InputLeftAddon children="Nombre" />
+            <Input
+              borderRadius="0"
+              placeholder="Inserte nombre"
+              defaultValue={data.nombre}
+              onChange={({ target: { value } }) => {
                 setData({
                   ...data,
                   nombre: value,
                 });
               }}
             />
-          </FormControl>
           </InputGroup>
-
           <InputGroup size="sm" width="50%">
-          <FormControl id="apellido" isRequired>
-            <FormLabel>Nombres: </FormLabel>
-            <Input 
-            placeholder="Inserte Nombres"
-            defaultValue = {data.nombre}
-            onChange={({ target: { value } }) => {
+            <InputLeftAddon children="Apellidos" />
+            <Input
+              borderRadius="0"
+              placeholder="Inserte apellidos"
+              defaultValue={data.apellido}
+              onChange={({ target: { value } }) => {
                 setData({
                   ...data,
-                  nombre: value,
+                  apellido: value,
                 });
               }}
             />
-          </FormControl>
+          </InputGroup>
+          </Flex>
+
+          <Flex>
+          <InputGroup size="sm" width="50%">
+            <InputLeftAddon children="RUT" />
+            <Input
+              borderRadius="0"
+              placeholder="Inserte rut"
+              defaultValue={data.rut}
+              onChange={({ target: { value } }) => {
+                setData({
+                  ...data,
+                  rut: value,
+                });
+              }}
+            />
           </InputGroup>
 
+          <InputGroup size="sm" width="50%">
+            <InputLeftAddon children="Género" />
+            <FormControl as="fieldset">
+              <RadioGroup defaultValue="">
+                <HStack spacing="24px">
+                  <Radio value="femenino">Femenino</Radio>
+                  <Radio value="masculino">Masculino</Radio>
+                  <Radio value="no_binario">No Binario</Radio>
+                </HStack>
+              </RadioGroup>
+            </FormControl>
+          </InputGroup>
+          </Flex>
+
+          <Flex>
           <InputGroup size="sm">
             <InputLeftAddon children="Telefono" />
             <Input
@@ -121,7 +157,9 @@ const formulario = ({ email }) => {
               }}
             />
           </InputGroup>
+          </Flex>
 
+          
           <InputGroup size="sm">
             <InputLeftAddon children="Email" />
             <Input
@@ -255,7 +293,7 @@ const formulario = ({ email }) => {
                 });
               }}
             />
-          </InputGroup> 
+          </InputGroup>
 
           <InputGroup size="sm">
             <InputLeftAddon children="Habilidades blandas" />
@@ -270,7 +308,7 @@ const formulario = ({ email }) => {
                 });
               }}
             />
-          </InputGroup> 
+          </InputGroup>
 
           <InputGroup size="sm">
             <InputLeftAddon children="Premios" />
@@ -290,7 +328,7 @@ const formulario = ({ email }) => {
           <InputGroup size="sm">
             <InputLeftAddon children="Capacitaciones" />
             <Input
-              borderRadius="0" 
+              borderRadius="0"
               placeholder="Insete Capacitaciónes realizadas"
               defaultValue={data.capacitaciones}
               onChange={({ target: { value } }) => {
@@ -300,7 +338,7 @@ const formulario = ({ email }) => {
                 });
               }}
             />
-          </InputGroup> 
+          </InputGroup>
         </Stack>
       ) : null}
     </Stack>
