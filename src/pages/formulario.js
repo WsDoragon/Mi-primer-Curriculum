@@ -1,7 +1,12 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+//Date picker (npm install react-datepicker --save)
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import {
   Stack,
+  Center,
+  Box,
   Spinner,
   useToast,
   Input,
@@ -16,7 +21,8 @@ import {
   RadioGroup,
   HStack,
   Radio,
-
+  Checkbox,
+  CheckboxGroup,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 //recibir el email y obtener el endpoint
@@ -34,6 +40,7 @@ const formulario = ({ email }) => {
   const [data, setData] = useState();
   const [loading, setLoading] = useState(true);
   const toast = useToast();
+  const [startDate, setStartDate] = useState(new Date());
 
   useEffect(() => {
     if (!email) {
@@ -67,99 +74,141 @@ const formulario = ({ email }) => {
       {data ? (
         <Stack>
           <Flex>
-          <InputGroup size="sm" width="50%">
-            <InputLeftAddon children="Nombre" />
-            <Input
-              borderRadius="0"
-              placeholder="Inserte nombre"
-              defaultValue={data.nombre}
-              onChange={({ target: { value } }) => {
-                setData({
-                  ...data,
-                  nombre: value,
-                });
-              }}
-            />
-          </InputGroup>
-          <InputGroup size="sm" width="50%">
-            <InputLeftAddon children="Apellidos" />
-            <Input
-              borderRadius="0"
-              placeholder="Inserte apellidos"
-              defaultValue={data.apellido}
-              onChange={({ target: { value } }) => {
-                setData({
-                  ...data,
-                  apellido: value,
-                });
-              }}
-            />
-          </InputGroup>
+            <InputGroup size="sm" width="50%">
+              <InputLeftAddon children="Nombre" />
+              <Input
+                borderRadius="0"
+                placeholder="Inserte nombre"
+                defaultValue={data.nombre}
+                onChange={({ target: { value } }) => {
+                  setData({
+                    ...data,
+                    nombre: value,
+                  });
+                }}
+              />
+            </InputGroup>
+            <InputGroup size="sm" width="50%">
+              <InputLeftAddon children="Apellidos" />
+              <Input
+                borderRadius="0"
+                placeholder="Inserte apellidos"
+                defaultValue={data.apellido}
+                onChange={({ target: { value } }) => {
+                  setData({
+                    ...data,
+                    apellido: value,
+                  });
+                }}
+              />
+            </InputGroup>
           </Flex>
 
           <Flex>
-          <InputGroup size="sm" width="50%">
-            <InputLeftAddon children="RUT" />
-            <Input
-              borderRadius="0"
-              placeholder="Inserte rut"
-              defaultValue={data.rut}
-              onChange={({ target: { value } }) => {
-                setData({
-                  ...data,
-                  rut: value,
-                });
-              }}
-            />
-          </InputGroup>
+            <InputGroup size="sm" width="50%">
+              <InputLeftAddon children="RUT" />
+              <Input
+                borderRadius="0"
+                placeholder="Inserte rut"
+                defaultValue={data.rut}
+                onChange={({ target: { value } }) => {
+                  setData({
+                    ...data,
+                    rut: value,
+                  });
+                }}
+              />
+            </InputGroup>
 
-          <InputGroup size="sm" width="50%">
-            <InputLeftAddon children="Género" />
-            <FormControl as="fieldset">
-              <RadioGroup defaultValue="">
-                <HStack spacing="24px">
-                  <Radio value="femenino">Femenino</Radio>
-                  <Radio value="masculino">Masculino</Radio>
-                  <Radio value="no_binario">No Binario</Radio>
-                </HStack>
-              </RadioGroup>
-            </FormControl>
-          </InputGroup>
+            <InputGroup size="sm" width="50%">
+              <InputLeftAddon children="Género" />
+              <FormControl as="fieldset">
+                <RadioGroup value={data.genero} onChange={(value)=>{
+                  setData({
+                    ...data,
+                    genero: value
+                  })
+                }}>
+                  <HStack spacing="24px">
+                    <Radio value="femenino">Femenino</Radio>
+                    <Radio value="masculino">Masculino</Radio>
+                    <Radio value="no_binario">No Binario</Radio>
+                  </HStack>
+                </RadioGroup>
+
+              </FormControl>
+            </InputGroup>
           </Flex>
 
           <Flex>
-          <InputGroup size="sm">
-            <InputLeftAddon children="Telefono" />
-            <Input
-              borderRadius="0"
-              placeholder="Inserte telefono"
-              defaultValue={data.telefono}
-              onChange={({ target: { value } }) => {
-                setData({
-                  ...data,
-                  telfono: value,
-                });
-              }}
-            />
-          </InputGroup>
+            <InputGroup size="sm">
+              <InputLeftAddon children="Fecha de Nacimiento" />
 
-          <InputGroup size="sm">
-            <InputLeftAddon children="Direccion" />
-            <Input
-              borderRadius="0"
-              placeholder="Inserte direccion"
-              defaultValue={data.direccion}
-              onChange={({ target: { value } }) => {
-                setData({
-                  ...data,
-                  direccion: value,
-                });
-              }}
-            />
-          </InputGroup>
+              <Center>
+                <Box
+                  borderWidth="2px"
+                  borderColor="black"
+                  rounded="lg"
+                  textAlign="center"
+                >
+                  <DatePicker
+                    css={{ textAlign: "center", visibility: "hidden" }}
+                    rounded="lg"
+                    selected={startDate}
+                    onChange={(date) => setStartDate(date)}
+                  />
+                </Box>
+              </Center>
+            </InputGroup>
+
+            <InputGroup size="sm">
+              <InputLeftAddon children="Nacionalidad" />
+              <Input
+                borderRadius="0"
+                placeholder="Inserte nacionalidad"
+                defaultValue={data.nacionalidad}
+                onChange={({ target: { value } }) => {
+                  setData({
+                    ...data,
+                    nacionalidad: value,
+                  });
+                }}
+              />
+            </InputGroup>
           </Flex>
 
-          
+          <Flex>
+            <InputGroup size="sm">
+              <InputLeftAddon children="Telefono" />
+              <Input
+                borderRadius="0"
+                placeholder="Inserte telefono"
+                defaultValue={data.telefono}
+                onChange={({ target: { value } }) => {
+                  setData({
+                    ...data,
+                    telfono: value,
+                  });
+                }}
+              />
+            </InputGroup>
+
+            <InputGroup size="sm">
+              <InputLeftAddon children="Direccion" />
+              <Input
+                borderRadius="0"
+                placeholder="Inserte direccion"
+                defaultValue={data.direccion}
+                onChange={({ target: { value } }) => {
+                  setData({
+                    ...data,
+                    direccion: value,
+                  });
+                }}
+              />
+            </InputGroup>
+          </Flex>
+
           <InputGroup size="sm">
             <InputLeftAddon children="Email" />
             <Input
@@ -325,20 +374,34 @@ const formulario = ({ email }) => {
             />
           </InputGroup>
 
-          <InputGroup size="sm">
-            <InputLeftAddon children="Capacitaciones" />
-            <Input
-              borderRadius="0"
-              placeholder="Insete Capacitaciónes realizadas"
-              defaultValue={data.capacitaciones}
-              onChange={({ target: { value } }) => {
-                setData({
-                  ...data,
-                  capacitaciones: value,
-                });
-              }}
-            />
-          </InputGroup>
+          <Flex>
+            <InputGroup size="sm" width="50%">
+              <InputLeftAddon children="Capacitaciones" />
+              <FormControl as="fieldset">
+                <RadioGroup defaultValue="">
+                  <HStack spacing="24px">
+                    <Radio value="Si">Si</Radio>
+                    <Radio value="No">No</Radio>
+                  </HStack>
+                </RadioGroup>
+              </FormControl>
+            </InputGroup>
+
+            <InputGroup size="sm">
+              <InputLeftAddon children="En el caso de responder si" />
+              <Input
+                borderRadius="0"
+                placeholder="Insete Capacitaciónes realizadas"
+                defaultValue={data.capacitaciones}
+                onChange={({ target: { value } }) => {
+                  setData({
+                    ...data,
+                    capacitaciones: value,
+                  });
+                }}
+              />
+            </InputGroup>
+          </Flex>
         </Stack>
       ) : null}
     </Stack>

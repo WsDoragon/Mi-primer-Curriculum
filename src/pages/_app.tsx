@@ -1,4 +1,5 @@
 import "../../public/style.css";
+import "react-datepicker/dist/react-datepicker.css";
 
 import { AppProps } from "next/app";
 import Head from "next/head";
