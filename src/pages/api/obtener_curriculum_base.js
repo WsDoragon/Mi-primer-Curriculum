@@ -10,10 +10,10 @@ export default async (req, res) => {
     id_usuario: req.body.id_usuario,
     nombre: "juan",
     apellido: "guerra",
-    rut: "20175738-9" ,
+    rut: "20175738-9",
     genero: "Femenino", // Femenino, Masculino, No binario.
     fecha_nacimiento: "",
-    nacionalidad: "", // Chileno, 
+    nacionalidad: "", // Chileno,
     telefono: 624612572,
     direccion: "",
     email: req.body.id_usuario,

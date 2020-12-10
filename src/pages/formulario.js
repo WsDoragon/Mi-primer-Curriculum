@@ -74,7 +74,7 @@ const formulario = ({ email }) => {
       {data ? (
         <Stack>
           <Flex>
-            <InputGroup size="sm" width="50%">
+            <InputGroup padding="10px" size="sm" width="50%">
               <InputLeftAddon children="Nombre" />
               <Input
                 borderRadius="0"
@@ -88,7 +88,7 @@ const formulario = ({ email }) => {
                 }}
               />
             </InputGroup>
-            <InputGroup size="sm" width="50%">
+            <InputGroup padding="10px" size="sm" width="50%">
               <InputLeftAddon children="Apellidos" />
               <Input
                 borderRadius="0"
@@ -105,7 +105,7 @@ const formulario = ({ email }) => {
           </Flex>
 
           <Flex>
-            <InputGroup size="sm" width="50%">
+            <InputGroup padding="10px" size="sm" width="50%">
               <InputLeftAddon children="RUT" />
               <Input
                 borderRadius="0"
@@ -120,7 +120,7 @@ const formulario = ({ email }) => {
               />
             </InputGroup>
 
-            <InputGroup size="sm" width="50%">
+            <InputGroup padding="10px" size="sm" width="50%">
               <InputLeftAddon children="Género" />
               <FormControl as="fieldset">
                 <RadioGroup value={data.genero} onChange={(value)=>{
@@ -130,9 +130,9 @@ const formulario = ({ email }) => {
                   })
                 }}>
                   <HStack spacing="24px">
-                    <Radio value="femenino">Femenino</Radio>
-                    <Radio value="masculino">Masculino</Radio>
-                    <Radio value="no_binario">No Binario</Radio>
+                    <Radio size="sm" padding="5px" value="femenino">Femenino</Radio>
+                    <Radio size="sm" padding="5px" value="masculino">Masculino</Radio>
+                    <Radio size="sm" padding="5px" value="no_binario">No Binario</Radio>
                   </HStack>
                 </RadioGroup>
 
@@ -143,11 +143,11 @@ const formulario = ({ email }) => {
           <Flex>
             <InputGroup size="sm">
               <InputLeftAddon children="Fecha de Nacimiento" />
-
               <Center>
                 <Box
-                  borderWidth="2px"
-                  borderColor="black"
+                  padding="5px" 
+                  borderWidth="3px"
+                  borderColor="blue"
                   rounded="lg"
                   textAlign="center"
                 >
@@ -161,7 +161,7 @@ const formulario = ({ email }) => {
               </Center>
             </InputGroup>
 
-            <InputGroup size="sm">
+            <InputGroup padding="10px" size="sm">
               <InputLeftAddon children="Nacionalidad" />
               <Input
                 borderRadius="0"
@@ -178,7 +178,7 @@ const formulario = ({ email }) => {
           </Flex>
 
           <Flex>
-            <InputGroup size="sm">
+            <InputGroup padding="10px" size="sm">
               <InputLeftAddon children="Telefono" />
               <Input
                 borderRadius="0"
@@ -193,7 +193,7 @@ const formulario = ({ email }) => {
               />
             </InputGroup>
 
-            <InputGroup size="sm">
+            <InputGroup padding="10px" size="sm">
               <InputLeftAddon children="Direccion" />
               <Input
                 borderRadius="0"
@@ -209,7 +209,8 @@ const formulario = ({ email }) => {
             </InputGroup>
           </Flex>
 
-          <InputGroup size="sm">
+          <Flex>
+          <InputGroup padding="10px" size="sm">
             <InputLeftAddon children="Email" />
             <Input
               borderRadius="0"
@@ -224,7 +225,7 @@ const formulario = ({ email }) => {
             />
           </InputGroup>
 
-          <InputGroup size="sm">
+          <InputGroup padding="10px" size="sm">
             <InputLeftAddon children="Formacion" />
             <Input
               borderRadius="0"
@@ -238,8 +239,10 @@ const formulario = ({ email }) => {
               }}
             />
           </InputGroup>
+          </Flex>
 
-          <InputGroup size="sm">
+          <Flex>
+          <InputGroup padding="10px" size="sm">
             <InputLeftAddon children="Intereses" />
             <Input
               borderRadius="0"
@@ -254,7 +257,7 @@ const formulario = ({ email }) => {
             />
           </InputGroup>
 
-          <InputGroup size="sm">
+          <InputGroup padding="10px" size="sm">
             <InputLeftAddon children="Habilidades" />
             <Input
               borderRadius="0" // Que hace esto?
@@ -268,8 +271,10 @@ const formulario = ({ email }) => {
               }}
             />
           </InputGroup>
+          </Flex>
 
-          <InputGroup size="sm">
+          <Flex>
+          <InputGroup padding="10px" size="sm">
             <InputLeftAddon children="Experiencia" />
             <Input
               borderRadius="0" // Que hace esto?
@@ -284,7 +289,7 @@ const formulario = ({ email }) => {
             />
           </InputGroup>
 
-          <InputGroup size="sm">
+          <InputGroup padding="10px" size="sm">
             <InputLeftAddon children="Experiencia 2" />
             <Input
               borderRadius="0" // Que hace esto?
@@ -298,8 +303,10 @@ const formulario = ({ email }) => {
               }}
             />
           </InputGroup>
+          </Flex>
 
-          <InputGroup size="sm">
+          <Flex>
+          <InputGroup padding="10px" size="sm">
             <InputLeftAddon children="Idiomas" />
             <Input
               borderRadius="0" // Que hace esto?
@@ -314,7 +321,7 @@ const formulario = ({ email }) => {
             />
           </InputGroup>
 
-          <InputGroup size="sm">
+          <InputGroup padding="10px" size="sm">
             <InputLeftAddon children="Competencias Digitales" />
             <Input
               borderRadius="0" // Que hace esto?
@@ -328,8 +335,10 @@ const formulario = ({ email }) => {
               }}
             />
           </InputGroup>
+          </Flex>
 
-          <InputGroup size="sm">
+          <Flex>
+          <InputGroup padding="10px" size="sm">
             <InputLeftAddon children="Otras competencias digitales" />
             <Input
               borderRadius="0" // Que hace esto?
@@ -344,7 +353,7 @@ const formulario = ({ email }) => {
             />
           </InputGroup>
 
-          <InputGroup size="sm">
+          <InputGroup padding="10px" size="sm">
             <InputLeftAddon children="Habilidades blandas" />
             <Input
               borderRadius="0" // Que hace esto?
@@ -358,36 +367,51 @@ const formulario = ({ email }) => {
               }}
             />
           </InputGroup>
-
-          <InputGroup size="sm">
-            <InputLeftAddon children="Premios" />
-            <Input
-              borderRadius="0" // Que hace esto?
-              placeholder="Insete premios recibidos"
-              defaultValue={data.premios}
-              onChange={({ target: { value } }) => {
-                setData({
-                  ...data,
-                  premios: value,
-                });
-              }}
-            />
-          </InputGroup>
+          </Flex>
 
           <Flex>
-            <InputGroup size="sm" width="50%">
-              <InputLeftAddon children="Capacitaciones" />
+          <InputGroup padding="10px" size="sm" width="50%">
+            <InputLeftAddon children="Premios" />
               <FormControl as="fieldset">
                 <RadioGroup defaultValue="">
                   <HStack spacing="24px">
-                    <Radio value="Si">Si</Radio>
-                    <Radio value="No">No</Radio>
+                    <Radio size="sm" padding="5px" value="Si">Si</Radio>
+                    <Radio size="sm" padding="5px" value="No">No</Radio>
                   </HStack>
                 </RadioGroup>
               </FormControl>
-            </InputGroup>
+          </InputGroup>
 
-            <InputGroup size="sm">
+            <InputGroup padding="10px" size="sm">
+              <InputLeftAddon children="En el caso de responder si" />
+              <Input
+                borderRadius="0"
+                placeholder="Insete Capacitaciónes realizadas"
+                defaultValue={data.capacitaciones}
+                onChange={({ target: { value } }) => {
+                  setData({
+                    ...data,
+                    capacitaciones: value,
+                  });
+                }}
+              />
+          </InputGroup>
+          </Flex>
+
+          <Flex>
+          <InputGroup padding="10px" size="sm" width="50%">
+            <InputLeftAddon children="Capacitaciones" />
+              <FormControl as="fieldset">
+                <RadioGroup defaultValue="">
+                  <HStack spacing="24px">
+                    <Radio size="sm" padding="5px" value="Si">Si</Radio>
+                    <Radio size="sm" padding="5px" value="No">No</Radio>
+                  </HStack>
+                </RadioGroup>
+              </FormControl>
+          </InputGroup>
+
+            <InputGroup padding="10px" size="sm">
               <InputLeftAddon children="En el caso de responder si" />
               <Input
                 borderRadius="0"
@@ -401,7 +425,7 @@ const formulario = ({ email }) => {
                 }}
               />
             </InputGroup>
-          </Flex>
+            </Flex>
         </Stack>
       ) : null}
     </Stack>
