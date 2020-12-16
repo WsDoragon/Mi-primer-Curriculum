@@ -8,16 +8,16 @@ import { NextApiResponse, NextApiRequest } from "next";
 export default async (req, res) => {
   let curriculum = {
     id_usuario: req.body.id_usuario,
-    nombre: "juan",
-    apellido: "guerra",
-    rut: "20175738-9",
-    genero: "Femenino", // Femenino, Masculino, No binario.
+    nombre: "",
+    apellido: "",
+    rut: "",
+    genero: "", // Femenino, Masculino, No binario.
     fecha_nacimiento: "",
     nacionalidad: "", // Chileno,
     telefono: 624612572,
     direccion: "",
     email: req.body.id_usuario,
-    tipo_formacion: "TP", // TP, CH
+    tipo_formacion: "", // TP, CH
     intereses: "",
     habilidades: "",
     experiencia_texto: "",
