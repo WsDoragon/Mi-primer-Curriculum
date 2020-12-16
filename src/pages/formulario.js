@@ -264,17 +264,19 @@ const formulario = ({ email }) => {
           <Flex>
             <InputGroup padding="10px" size="sm">
               <InputLeftAddon children="Idiomas" />
-              <Input
-                borderRadius="0" // Que hace esto?
-                placeholder="Complete Información"
-                defaultValue={data.idiomas}
-                onChange={({ target: { value } }) => {
-                  setData({
-                    ...data,
-                    idiomas: value,
-                  });
-                }}
-              />
+              <CheckboxGroup
+                colorScheme="green"
+                defaultValue={["naruto", "kakashi"]}
+              >
+                <HStack>
+                  <Checkbox value="Español">Español</Checkbox>
+                  <Checkbox value="Ingles">Ingles</Checkbox>
+                  <Checkbox value="Frances">Frances</Checkbox>
+                  <Checkbox value="Portugues">Portugues</Checkbox>
+                  <Checkbox value="Ruso">Ruso</Checkbox>
+                  <Checkbox value="Italiano">Italiano</Checkbox>
+                </HStack>
+              </CheckboxGroup>
             </InputGroup>
 
             <InputGroup padding="10px" size="sm">
@@ -439,6 +441,12 @@ const formulario = ({ email }) => {
               />
             </InputGroup>
           </Flex>
+          <Center>
+            <ButtonGroup variant="outline" spacing="6">
+              <Button colorScheme="blue">Guardar</Button>
+              <Button>Cargar</Button>
+            </ButtonGroup>
+          </Center>
         </Stack>
       ) : null}
     </Stack>
