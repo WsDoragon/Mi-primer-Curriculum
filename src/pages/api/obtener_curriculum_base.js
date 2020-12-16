@@ -17,7 +17,7 @@ export default async (req, res) => {
     telefono: 624612572,
     direccion: "",
     email: req.body.id_usuario,
-    tipo_formacion: "TP", // TP, CH
+    tipo_formacion: "", // TP, CH
     intereses: "",
     habilidades: "",
     experiencia_texto: "",

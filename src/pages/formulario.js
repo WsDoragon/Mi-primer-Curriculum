@@ -27,6 +27,8 @@ import {
   Select,
   CheckboxGroup,
   Textarea,
+  extendTheme,
+  ChakraProvider,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 //recibir el email y obtener el endpoint
@@ -79,11 +81,11 @@ const formulario = ({ email }) => {
         <Stack>
           <Flex>
             <InputGroup size="sm" width="50%" padding="10px">
-              <InputLeftAddon children="Nombre" />
+              <InputLeftAddon children="Nombres" />
               <Input
                 borderRadius="0"
                 placeholder="Inserte nombre"
-                defaultValue={data.nombre}
+                Value={data.nombre}
                 onChange={({ target: { value } }) => {
                   setData({
                     ...data,
@@ -97,7 +99,7 @@ const formulario = ({ email }) => {
               <Input
                 borderRadius="0"
                 placeholder="Inserte apellidos"
-                defaultValue={data.apellido}
+                Value={data.apellido}
                 onChange={({ target: { value } }) => {
                   setData({
                     ...data,
@@ -109,12 +111,12 @@ const formulario = ({ email }) => {
           </Flex>
 
           <Flex>
-            <InputGroup padding="10px" size="sm" width="50%">
+            <InputGroup padding="10px" size="sm" width="100%">
               <InputLeftAddon children="RUT" />
               <Input
                 borderRadius="0"
                 placeholder="Inserte rut"
-                defaultValue={data.rut}
+                value={data.rut}
                 onChange={({ target: { value } }) => {
                   setData({
                     ...data,
@@ -124,7 +126,7 @@ const formulario = ({ email }) => {
               />
             </InputGroup>
 
-            <InputGroup padding="10px" size="sm" width="50%">
+            <InputGroup padding="10px" size="sm">
               <InputLeftAddon children="Género" />
               <FormControl as="fieldset">
                 <RadioGroup
@@ -155,19 +157,14 @@ const formulario = ({ email }) => {
           <Flex>
             <InputGroup size="sm" padding="10px">
               <InputLeftAddon children="Fecha de Nacimiento" />
-                <Box
-                  borderWidth="3px"
-                  borderColor="blue"
-                  rounded="lg"
-                >
+              <Box borderWidth="3px" borderColor="blue" rounded="lg">
                 <DatePicker
-                    css={{ visibility: "hidden" }}
-                    rounded="lg"
-                    selected={startDate}
-                    onChange={(date) => setStartDate(date)}
-                  />
-                  
-                </Box>
+                  css={{ visibility: "hidden" }}
+                  rounded="lg"
+                  selected={startDate}
+                  onChange={(date) => setStartDate(date)}
+                />
+              </Box>
             </InputGroup>
 
             <InputGroup padding="10px" size="sm">
@@ -175,7 +172,7 @@ const formulario = ({ email }) => {
               <Input
                 borderRadius="0"
                 placeholder="Inserte nacionalidad"
-                defaultValue={data.nacionalidad}
+                Value={data.nacionalidad}
                 onChange={({ target: { value } }) => {
                   setData({
                     ...data,
@@ -192,7 +189,7 @@ const formulario = ({ email }) => {
               <Input
                 borderRadius="0"
                 placeholder="Inserte telefono"
-                defaultValue={data.telefono}
+                Value={data.telefono}
                 onChange={({ target: { value } }) => {
                   setData({
                     ...data,
@@ -207,7 +204,7 @@ const formulario = ({ email }) => {
               <Input
                 borderRadius="0"
                 placeholder="Inserte direccion"
-                defaultValue={data.direccion}
+                Value={data.direccion}
                 onChange={({ target: { value } }) => {
                   setData({
                     ...data,
@@ -251,14 +248,14 @@ const formulario = ({ email }) => {
                 <option value="Liceo Cientifico Humanista Completo">
                   Liceo Cientifico Humanista Completo
                 </option>
-                <option value="Liceo Cientifico Humanista Inompleto">
-                  Liceo Cientifico Humanista Inompleto
+                <option value="Liceo Cientifico Humanista Incompleto">
+                  Liceo Cientifico Humanista Incompleto
                 </option>
-                <option value="Liceo Técnico Profecional Completo">
-                  Liceo Técnico Profecional Completo
+                <option value="Liceo Tecnico Profesional Completo">
+                  Liceo Tecnico Profesional Completo
                 </option>
-                <option value="Liceo Técnico Profesional Incompleto">
-                  Liceo Técnico Profesional Incompleto
+                <option value="Liceo Tecnico Profecional Incompleto">
+                  Liceo Tecnico Profecional Incompleto
                 </option>
               </Select>
             </InputGroup>
@@ -267,19 +264,17 @@ const formulario = ({ email }) => {
           <Flex>
             <InputGroup padding="10px" size="sm">
               <InputLeftAddon children="Idiomas" />
-              <CheckboxGroup
-                colorScheme="green"
-                defaultValue={["naruto", "kakashi"]}
-              >
-                <HStack>
-                  <Checkbox value="Español">Español</Checkbox>
-                  <Checkbox value="Ingles">Ingles</Checkbox>
-                  <Checkbox value="Frances">Frances</Checkbox>
-                  <Checkbox value="Portugues">Portugues</Checkbox>
-                  <Checkbox value="Ruso">Ruso</Checkbox>
-                  <Checkbox value="Italiano">Italiano</Checkbox>
-                </HStack>
-              </CheckboxGroup>
+              <Input
+                borderRadius="0" // Que hace esto?
+                placeholder="Complete Información"
+                defaultValue={data.idiomas}
+                onChange={({ target: { value } }) => {
+                  setData({
+                    ...data,
+                    idiomas: value,
+                  });
+                }}
+              />
             </InputGroup>
 
             <InputGroup padding="10px" size="sm">
@@ -298,12 +293,14 @@ const formulario = ({ email }) => {
             </InputGroup>
           </Flex>
 
-          <Heading align="center" size="md"> Experiencia Laboral:</Heading>
+          <Heading align="center" size="md">
+            {" "}
+            Experiencia Laboral:
+          </Heading>
           <Flex>
             <InputGroup padding="10px" size="sm">
               <Textarea
-                borderRadius="0" // Que hace esto?
-                placeholder="Inserte Experiencias"
+                placeholder="Trabaje en ******** ocupe el puesto de ********* entre el periodo de tiempo XX/XX/XXXX hasta XX/XX/XXXX, mi experiencia tranajando hay fue ..."
                 defaultValue={data.experiencia_texto}
                 onChange={({ target: { value } }) => {
                   setData({
@@ -319,7 +316,7 @@ const formulario = ({ email }) => {
             <InputGroup padding="10px" size="sm">
               <InputLeftAddon children="Habilidades" />
               <Textarea
-                placeholder="Here is a sample placeholder"
+                placeholder="Inserte Habilidades"
                 defaultValue={data.habilidades}
                 onChange={({ target: { value } }) => {
                   setData({
@@ -333,7 +330,7 @@ const formulario = ({ email }) => {
             <InputGroup padding="10px" size="sm">
               <InputLeftAddon children="Habilidades blandas" />
               <Textarea
-                placeholder="Insete habilidades blandas"
+                placeholder="Inserte habilidades blandas"
                 defaultValue={data.habilidades_blandas}
                 onChange={({ target: { value } }) => {
                   setData({
@@ -381,7 +378,7 @@ const formulario = ({ email }) => {
             <InputGroup padding="10px" size="sm" width="50%">
               <InputLeftAddon children="Premios" />
               <FormControl as="fieldset">
-                <RadioGroup defaultValue="">
+                <RadioGroup Value="">
                   <HStack spacing="24px">
                     <Radio size="sm" padding="5px" value="Si">
                       Si
@@ -442,12 +439,6 @@ const formulario = ({ email }) => {
               />
             </InputGroup>
           </Flex>
-          <Center>
-            <ButtonGroup variant="outline" spacing="6">
-              <Button colorScheme="blue">Guardar</Button>
-              <Button>Cargar</Button>
-            </ButtonGroup>
-          </Center>
         </Stack>
       ) : null}
     </Stack>
