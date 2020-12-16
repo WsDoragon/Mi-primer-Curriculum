@@ -266,7 +266,13 @@ const formulario = ({ email }) => {
               <InputLeftAddon children="Idiomas" />
               <CheckboxGroup
                 colorScheme="green"
-                defaultValue={["naruto", "kakashi"]}
+                value={data.idiomas}
+                onChange={(selectedValues) => {
+                  setData({
+                    ...data,
+                    idiomas: selectedValues,
+                  });
+                }}
               >
                 <HStack>
                   <Checkbox value="Español">Español</Checkbox>
@@ -284,7 +290,7 @@ const formulario = ({ email }) => {
               <Input
                 borderRadius="0"
                 placeholder="Inserte Intereses"
-                defaultValue={data.intereses}
+                value={data.intereses}
                 onChange={({ target: { value } }) => {
                   setData({
                     ...data,

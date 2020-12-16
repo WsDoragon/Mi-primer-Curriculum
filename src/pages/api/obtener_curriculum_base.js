@@ -24,12 +24,7 @@ export default async (req, res) => {
     experiencia_items: [
       { exp_descripcion: "xxxxx", desde: "13-10-2017", hasta: "15-12-2017" },
     ],
-    idiomas: [
-      {
-        idioma: "español",
-        nivel: "básico", // "básico","medio","fluido"
-      },
-    ],
+    idiomas: ["español"],
     competencias_digitales: {
       proc_texto: "básico", // "nulo","básico","medio","fluido"
       planilla_calculo: "básico",
