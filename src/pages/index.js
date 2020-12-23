@@ -1,4 +1,4 @@
-import { Heading, Stack, Box, Center, Button, Link } from "@chakra-ui/react";
+  import { Heading, Stack, Box, Center, Button, Link } from "@chakra-ui/react";
 import { HiShieldCheck } from "react-icons/hi";
 
 export default function IndexPage() {
