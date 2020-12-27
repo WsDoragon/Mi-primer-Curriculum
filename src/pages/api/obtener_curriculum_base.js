@@ -14,16 +14,13 @@ export default async (req, res) => {
     genero: "Femenino", // Femenino, Masculino, No binario.
     fecha_nacimiento: "",
     nacionalidad: "", // Chileno,
-    telefono: 11000000,
+    telefono: 900000000,
     direccion: "",
     email: req.body.id_usuario,
     tipo_formacion: "", // TP, CH
     intereses: "",
     habilidades: "",
     experiencia_texto: "",
-    experiencia_items: [
-      { exp_descripcion: "xxxxx", desde: "13-10-2017", hasta: "15-12-2017" },
-    ],
     idiomas: ["español"],
     competencias_digitales: {
       proc_texto: "básico", // "nulo","básico","medio","fluido"
