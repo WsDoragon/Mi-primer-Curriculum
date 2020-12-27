@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 //Date picker (npm install react-datepicker --save)
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import {dataFormulario} from "./visualizar"
 import {
   Button,
   ButtonGroup,
@@ -76,7 +77,7 @@ const formulario = ({ email }) => {
   return (
     <Stack padding="20px">
       {loading && <Spinner />}
-      <Heading align="center"> Formulario: Mi primer Curriculum</Heading>
+      <Heading align="center"> Mi primer Curriculum</Heading>
       {data ? (
         <Stack>
           <Flex>
@@ -370,7 +371,7 @@ const formulario = ({ email }) => {
               <InputLeftAddon children="Otras competencias digitales" />
               <Input
                 borderRadius="0" // Que hace esto?
-                placeholder="Insete Competencias Digitales"
+                placeholder="Inserte Competencias Digitales"
                 defaultValue={data.otras_comp_digitales}
                 onChange={({ target: { value } }) => {
                   setData({
@@ -403,7 +404,7 @@ const formulario = ({ email }) => {
               <InputLeftAddon children="En el caso de responder si" />
               <Input
                 borderRadius="0"
-                placeholder="Insete Capacitaciónes realizadas"
+                placeholder="Inserte Capacitaciónes realizadas"
                 defaultValue={data.capacitaciones}
                 onChange={({ target: { value } }) => {
                   setData({
@@ -449,8 +450,10 @@ const formulario = ({ email }) => {
           </Flex>
           <Center>
             <ButtonGroup variant="outline" spacing="6">
-              <Button colorScheme="blue">Guardar</Button>
-              <Button>Cargar</Button>
+              <Button colorScheme="blue" onClick={()=>{
+                dataFormulario.formulario=data;
+                push("/visualizar")
+              }}>Finalizar</Button>
             </ButtonGroup>
           </Center>
         </Stack>
