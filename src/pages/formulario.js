@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 //Date picker (npm install react-datepicker --save)
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import {dataFormulario} from "./visualizar"
+import { dataFormulario } from "./visualizar";
 import {
   Button,
   ButtonGroup,
@@ -222,7 +222,7 @@ const formulario = ({ email }) => {
               <Input
                 borderRadius="0"
                 placeholder="Inserte Email"
-                defaultValue={data.email}
+                Value={data.email}
                 onChange={({ target: { value } }) => {
                   setData({
                     ...data,
@@ -235,8 +235,8 @@ const formulario = ({ email }) => {
             <InputGroup padding="10px" size="sm">
               <InputLeftAddon children="Formacion" />
               <Select
-                placeholder="Select option"
-                defaultValue={data.tipo_formacion}
+                placeholder="Seleccione"
+                Value={data.tipo_formacion}
                 onChange={({ target: { value } }) => {
                   setData({
                     ...data,
@@ -265,16 +265,7 @@ const formulario = ({ email }) => {
           <Flex>
             <InputGroup padding="10px" size="sm">
               <InputLeftAddon children="Idiomas" />
-              <CheckboxGroup
-                colorScheme="green"
-                value={data.idiomas}
-                onChange={(selectedValues) => {
-                  setData({
-                    ...data,
-                    idiomas: selectedValues,
-                  });
-                }}
-              >
+              <CheckboxGroup colorScheme="green" Value={["naruto", "kakashi"]}>
                 <HStack>
                   <Checkbox value="Español">Español</Checkbox>
                   <Checkbox value="Ingles">Ingles</Checkbox>
@@ -291,7 +282,7 @@ const formulario = ({ email }) => {
               <Input
                 borderRadius="0"
                 placeholder="Inserte Intereses"
-                value={data.intereses}
+                Value={data.intereses}
                 onChange={({ target: { value } }) => {
                   setData({
                     ...data,
@@ -310,7 +301,7 @@ const formulario = ({ email }) => {
             <InputGroup padding="10px" size="sm">
               <Textarea
                 placeholder="Trabaje en ******** ocupe el puesto de ********* entre el periodo de tiempo XX/XX/XXXX hasta XX/XX/XXXX, mi experiencia tranajando hay fue ..."
-                defaultValue={data.experiencia_texto}
+                Value={data.experiencia_texto}
                 onChange={({ target: { value } }) => {
                   setData({
                     ...data,
@@ -326,7 +317,7 @@ const formulario = ({ email }) => {
               <InputLeftAddon children="Habilidades" />
               <Textarea
                 placeholder="Inserte Habilidades"
-                defaultValue={data.habilidades}
+                Value={data.habilidades}
                 onChange={({ target: { value } }) => {
                   setData({
                     ...data,
@@ -340,7 +331,7 @@ const formulario = ({ email }) => {
               <InputLeftAddon children="Habilidades blandas" />
               <Textarea
                 placeholder="Inserte habilidades blandas"
-                defaultValue={data.habilidades_blandas}
+                Value={data.habilidades_blandas}
                 onChange={({ target: { value } }) => {
                   setData({
                     ...data,
@@ -353,18 +344,27 @@ const formulario = ({ email }) => {
 
           <Flex>
             <InputGroup padding="10px" size="sm">
-              <InputLeftAddon children="Competencias Digitales" />
-              <Input
-                borderRadius="0" // Que hace esto?
-                placeholder="Complete Información"
-                defaultValue={data.competencias_digitales}
+              <InputLeftAddon children="Competencias digitales" />
+              <Select
+                placeholder="Seleccione"
+                Value={data.competencias_digitales}
                 onChange={({ target: { value } }) => {
                   setData({
                     ...data,
                     competencias_digitales: value,
                   });
                 }}
-              />
+              >
+                <option value="Base de Datos">Base de Datos</option>
+                <option value="Planilla de Cálculo">Planilla de Cálculo</option>
+                <option value="Procesamiento de Texto">
+                  Procesamiento de Texto
+                </option>
+                <option value="Presentaciones">Presentaciones</option>
+                <option value="Manejo de Internet">Manejo de Internet</option>
+                <option value="Edición de Video">Edición de Video</option>
+                <option value="Edición de Imagenes">Edición de Imagenes</option>
+              </Select>
             </InputGroup>
 
             <InputGroup padding="10px" size="sm">
@@ -372,7 +372,7 @@ const formulario = ({ email }) => {
               <Input
                 borderRadius="0" // Que hace esto?
                 placeholder="Inserte Competencias Digitales"
-                defaultValue={data.otras_comp_digitales}
+                Value={data.otras_comp_digitales}
                 onChange={({ target: { value } }) => {
                   setData({
                     ...data,
@@ -404,12 +404,12 @@ const formulario = ({ email }) => {
               <InputLeftAddon children="En el caso de responder si" />
               <Input
                 borderRadius="0"
-                placeholder="Inserte Capacitaciónes realizadas"
-                defaultValue={data.capacitaciones}
+                placeholder="Inserte Premios obtenidos"
+                Value={data.premios}
                 onChange={({ target: { value } }) => {
                   setData({
                     ...data,
-                    capacitaciones: value,
+                    premios: value,
                   });
                 }}
               />
@@ -420,7 +420,7 @@ const formulario = ({ email }) => {
             <InputGroup padding="10px" size="sm" width="50%">
               <InputLeftAddon children="Capacitaciones" />
               <FormControl as="fieldset">
-                <RadioGroup defaultValue="">
+                <RadioGroup Value="">
                   <HStack spacing="24px">
                     <Radio size="sm" padding="5px" value="Si">
                       Si
@@ -437,8 +437,8 @@ const formulario = ({ email }) => {
               <InputLeftAddon children="En el caso de responder si" />
               <Input
                 borderRadius="0"
-                placeholder="Insete Capacitaciónes realizadas"
-                defaultValue={data.capacitaciones}
+                placeholder="Insete Capacitaciones realizadas"
+                Value={data.capacitaciones}
                 onChange={({ target: { value } }) => {
                   setData({
                     ...data,
@@ -450,10 +450,15 @@ const formulario = ({ email }) => {
           </Flex>
           <Center>
             <ButtonGroup variant="outline" spacing="6">
-              <Button colorScheme="blue" onClick={()=>{
-                dataFormulario.formulario=data;
-                push("/visualizar")
-              }}>Finalizar</Button>
+              <Button
+                colorScheme="blue"
+                onClick={() => {
+                  dataFormulario.formulario = data;
+                  push("/visualizar");
+                }}
+              >
+                Finalizar
+              </Button>
             </ButtonGroup>
           </Center>
         </Stack>
