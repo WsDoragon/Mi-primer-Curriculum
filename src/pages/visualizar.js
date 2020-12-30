@@ -8,17 +8,19 @@ export default function Visualizar() {
   }
 
   return (
-    <div margin="10px">
+    <div padding="20px">
       <Heading align="center">Curriculum Vitae</Heading>
-      <h1>
-        Nombre:{" "}
-        {JSON.stringify(
-          dataFormulario.formulario.nombre +
-            " " +
-            dataFormulario.formulario.apellido
-        )}{" "}
-      </h1>
-      <h1>rut: {JSON.stringify(dataFormulario.formulario.rut)} </h1>
+      <div border="20px" padding="30px">
+        <h2>
+          Nombre:{" "}
+          {JSON.stringify(
+            dataFormulario.formulario.nombre +
+              " " +
+              dataFormulario.formulario.apellido
+          )}{" "}
+        </h2>
+        <h1>rut: {JSON.stringify(dataFormulario.formulario.rut)} </h1>
+      </div>
       <h1>
         Fecha de nacimiento{" "}
         {JSON.stringify(
@@ -28,6 +30,7 @@ export default function Visualizar() {
       <h1>Domicilio: {JSON.stringify(dataFormulario.formulario.rut)} </h1>
       <h1>Telefono: {JSON.stringify(dataFormulario.formulario.telefono)} </h1>
       <h1>email: {JSON.stringify(dataFormulario.formulario.email)} </h1>
+
       <h1 align="center">Perfil:</h1>
       <Box
         p="6"
@@ -59,14 +62,16 @@ export default function Visualizar() {
         {JSON.stringify(dataFormulario.formulario.experiencia_texto)}
       </Box>
 
-      <h1 align="center">Informacion de Interes:</h1>
+      <h2 align="center" width="50%">
+        Informacion de Interes:
+      </h2>
       <Box
         p="6"
         m="4"
         flexBasis="45%"
         borderWidth="2px"
-        borderColor="black"
-        rounded="lg"
+        borderColor="Blue"
+        rounded="md"
       >
         {JSON.stringify(dataFormulario.formulario.competencias_digitales)}
         {JSON.stringify(dataFormulario.formulario.premios)}
