@@ -17,20 +17,12 @@ export default async (req, res) => {
     telefono: 900000000,
     direccion: "",
     email: req.body.id_usuario,
-    tipo_formacion: "", // TP, CH
+    tipo_formacion: " ", // TP, CH
     intereses: "",
     habilidades: "",
     experiencia_texto: "",
-    idiomas: ["español"],
-    competencias_digitales: {
-      proc_texto: "básico", // "nulo","básico","medio","fluido"
-      planilla_calculo: "básico",
-      internet: "básico",
-      base_datos: "básico",
-      presentaciones: "básico",
-      edicion_video: "básico",
-      edicion_imagenes: "básico",
-    },
+    idiomas: [],
+    competencias_digitales: "",
     otras_comp_digitales: "",
     habilidades_blandas: "",
     premios: "",

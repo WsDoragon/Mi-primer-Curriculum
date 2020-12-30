@@ -268,7 +268,14 @@ const formulario = ({ email }) => {
           <Flex>
             <InputGroup padding="10px" size="sm">
               <InputLeftAddon children="Idiomas" />
-              <CheckboxGroup colorScheme="green" Value={["naruto", "kakashi"]}>
+              <CheckboxGroup 
+                Value={data.idiomas}
+                onChange={({ target: { value } }) => {
+                  setData({
+                    ...data,
+                    idiomas: value,
+                  });
+                }} >
                 <HStack>
                   <Checkbox value="Español">Español</Checkbox>
                   <Checkbox value="Ingles">Ingles</Checkbox>
@@ -374,7 +381,7 @@ const formulario = ({ email }) => {
               borderRadius="0" // Que hace esto?
               placeholder="Inserte Competencias Digitales"
               Value={data.otras_comp_digitales}
-              onChange={({ target: { value, value2 } }) => {
+              onChange={({ target: { value } }) => {
                 setData({
                   ...data,
                   otras_comp_digitales: value,
