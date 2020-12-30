@@ -1,5 +1,6 @@
-import { Text, Heading, Box, Flex } from "@chakra-ui/react";
+import { Text, Heading, Box, Flex, Button, ButtonGroup } from "@chakra-ui/react";
 import { extendTheme } from "@chakra-ui/react";
+import { useState, useEffect } from "react";
 
 export const dataFormulario = { formulario: null };
 
@@ -7,6 +8,10 @@ export default function Visualizar() {
   if (!dataFormulario.formulario) {
     return <Text>No existe Formulario</Text>;
   }
+
+  useEffect(() => {
+    window.print();
+  });
 
   return (
     <div padding="40px 40px 40px 40px">
@@ -25,7 +30,7 @@ export default function Visualizar() {
             " " +
             dataFormulario.formulario.apellido}{" "}
         </h1>
-        <h1>run: {dataFormulario.formulario.rut} </h1>
+        <h1>Run: {dataFormulario.formulario.rut} </h1>
         <h1>
           Fecha de nacimiento {dataFormulario.formulario.fecha_nacimiento}{" "}
         </h1>
@@ -56,13 +61,13 @@ export default function Visualizar() {
           //height= "100%"
           width="100%"
         >
-          Vivo en {dataFormulario.formulario.direccion}, me coincidero una
+          Vivo en {dataFormulario.formulario.direccion}, me coinsidero una
           persona
-          {dataFormulario.habilidades_blandas}, en cuanto a mi formacion es de
+          {dataFormulario.habilidades_blandas}, en cuanto a mi formación es de
           {(" "+ dataFormulario.formulario.tipo_formacion + " ")}
           actualmente, me intereso por
           {(dataFormulario.formulario.intereses)} y tengo bastante
-          facilidades, algunas son; 
+          facilidades en diversas áreas, algunas son; 
           {(dataFormulario.formulario.habilidades)}
         </Box>
       </Flex>
@@ -110,10 +115,12 @@ export default function Visualizar() {
           borderColor="Gray"
           //height= "100%"
           width="100%"
-        >
-          {(dataFormulario.formulario.competencias_digitales)}
-          {(dataFormulario.formulario.premios)}
-          {(dataFormulario.capcitaciones)}
+        > <h1>Competencias digitales: 
+          {(" " + dataFormulario.formulario.competencias_digitales)} 
+          {(", "+ dataFormulario.formulario. otras_comp_digitales)} </h1>
+          
+          Premios: <h1>{(" " + dataFormulario.formulario.premios)}</h1>
+          Capacitaciones: <h1>{(" " + dataFormulario.capacitaciones)}</h1>
         </Box>
       </Flex>
     </div>

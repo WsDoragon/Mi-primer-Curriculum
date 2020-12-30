@@ -100,7 +100,7 @@ const formulario = ({ email }) => {
               <InputLeftAddon children="Apellidos" />
               <Input
                 borderRadius="0"
-                placeholder="Perez Rosales"
+                placeholder="Perez Gonzalez"
                 Value={data.apellido}
                 onChange={({ target: { value } }) => {
                   setData({
@@ -161,8 +161,9 @@ const formulario = ({ email }) => {
               <InputLeftAddon children="Fecha de Nacimiento" />
               <Box borderWidth="3px" borderColor="blue" rounded="lg">
                 <DatePicker
+                  dateFormat="dd/MM/yyyy"
                   css={{ visibility: "hidden" }}
-                  rounded="lg"
+                  //rounded="lg"
                   selected={new Date(data.fecha_nacimiento)}
                   onChange={(date) =>
                     setData({ ...data, fecha_nacimiento: date.toISOString() })
@@ -175,7 +176,7 @@ const formulario = ({ email }) => {
               <InputLeftAddon children="Nacionalidad" />
               <Input
                 borderRadius="0"
-                placeholder="Chileno(a)"
+                placeholder="Chileno(a) u otro"
                 Value={data.nacionalidad}
                 onChange={({ target: { value } }) => {
                   setData({
@@ -266,23 +267,23 @@ const formulario = ({ email }) => {
           </Flex>
 
           <Flex>
-            <InputGroup padding="10px" size="sm">
+          <InputGroup padding="10px" size="sm">
               <InputLeftAddon children="Idiomas" />
               <CheckboxGroup 
                 Value={data.idiomas}
-                onChange={({ target: { value } }) => {
+                onChange={ value  => {
                   setData({
                     ...data,
                     idiomas: value,
                   });
                 }} >
                 <HStack>
-                  <Checkbox value="Español">Español</Checkbox>
-                  <Checkbox value="Ingles">Ingles</Checkbox>
-                  <Checkbox value="Frances">Frances</Checkbox>
-                  <Checkbox value="Portugues">Portugues</Checkbox>
-                  <Checkbox value="Ruso">Ruso</Checkbox>
-                  <Checkbox value="Italiano">Italiano</Checkbox>
+                  <Checkbox value="Español ">Español</Checkbox>
+                  <Checkbox value="Ingles ">Ingles</Checkbox>
+                  <Checkbox value="Frances ">Frances</Checkbox>
+                  <Checkbox value="Portugues ">Portugues</Checkbox>
+                  <Checkbox value="Ruso ">Ruso</Checkbox>
+                  <Checkbox value="Italiano ">Italiano</Checkbox>
                 </HStack>
               </CheckboxGroup>
             </InputGroup>
@@ -354,21 +355,27 @@ const formulario = ({ email }) => {
 
           <InputGroup padding="10px" size="sm">
             <InputLeftAddon children="Competencias digitales" />
-            <CheckboxGroup colorScheme="green" Value={["naruto", "kakashi"]}>
+            <CheckboxGroup Value={data.competencias_digitales}
+                onChange={ value  => {
+                  setData({
+                    ...data,
+                    competencias_digitales: value,
+                  });
+                }} >
               <HStack>
-                <Checkbox value="Base de Datos">Base de Datos</Checkbox>
-                <Checkbox value="Planilla de Cálculo">
+                <Checkbox value="Base de Datos ">Base de Datos</Checkbox>
+                <Checkbox value="Planilla de Cálculo ">
                   Planilla de Cálculo
                 </Checkbox>
-                <Checkbox value="Procesamiento de Texto">
+                <Checkbox value="Procesamiento de Texto ">
                   Procesamiento de Texto
                 </Checkbox>
-                <Checkbox value="Presentaciones">Presentaciones</Checkbox>
-                <Checkbox value="Manejo de Internet">
+                <Checkbox value="Presentaciones ">Presentaciones</Checkbox>
+                <Checkbox value="Manejo de Internet ">
                   Manejo de Internet
                 </Checkbox>
-                <Checkbox value="Edición de Video">Edición de Video</Checkbox>
-                <Checkbox value="Edición de Imagenes">
+                <Checkbox value="Edición de Video ">Edición de Video</Checkbox>
+                <Checkbox value="Edición de Imagenes ">
                   Edición de Imagenes
                 </Checkbox>
               </HStack>

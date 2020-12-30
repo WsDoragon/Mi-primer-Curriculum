@@ -14,7 +14,7 @@ export default async (req, res) => {
     genero: "Femenino", // Femenino, Masculino, No binario.
     fecha_nacimiento: new Date().toISOString(),
     nacionalidad: "", // Chileno,
-    telefono: 900000000,
+    telefono: "",
     direccion: "",
     email: req.body.id_usuario,
     tipo_formacion: " ", // TP, CH
