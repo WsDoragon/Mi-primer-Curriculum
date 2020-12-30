@@ -13,23 +13,16 @@ export default function Visualizar() {
       <div border="20px" padding="30px">
         <h2>
           Nombre:{" "}
-          {JSON.stringify(
-            dataFormulario.formulario.nombre +
-              " " +
-              dataFormulario.formulario.apellido
-          )}{" "}
+          {dataFormulario.formulario.nombre +
+            " " +
+            dataFormulario.formulario.apellido}{" "}
         </h2>
-        <h1>rut: {JSON.stringify(dataFormulario.formulario.rut)} </h1>
+        <h1>rut: {dataFormulario.formulario.rut} </h1>
       </div>
-      <h1>
-        Fecha de nacimiento{" "}
-        {JSON.stringify(
-          "Fecha de nacimiento" + dataFormulario.formulario.fecha_nacimiento
-        )}{" "}
-      </h1>
-      <h1>Domicilio: {JSON.stringify(dataFormulario.formulario.rut)} </h1>
-      <h1>Telefono: {JSON.stringify(dataFormulario.formulario.telefono)} </h1>
-      <h1>email: {JSON.stringify(dataFormulario.formulario.email)} </h1>
+      <h1>Fecha de nacimiento {dataFormulario.formulario.fecha_nacimiento} </h1>
+      <h1>Domicilio: {dataFormulario.formulario.rut} </h1>
+      <h1>Telefono: {dataFormulario.formulario.telefono} </h1>
+      <h1>email: {dataFormulario.formulario.email} </h1>
 
       <h1 align="center">Perfil:</h1>
       <Box
@@ -40,10 +33,8 @@ export default function Visualizar() {
         borderColor="black"
         rounded="lg"
       >
-        Vivo en {JSON.stringify(dataFormulario.formulario.direccion)}, me
-        coincidero una persona
-        {JSON.stringify(dataFormulario.habilidades_blandas)}, en cuanto a mi
-        formacion es de{" "}
+        Vivo en {dataFormulario.formulario.direccion}, me coincidero una persona
+        {dataFormulario.habilidades_blandas}, en cuanto a mi formacion es de{" "}
         {JSON.stringify(dataFormulario.formulario.tipo_formacion)}
         actualmente, me intereso por{" "}
         {JSON.stringify(dataFormulario.formulario.intereses)} y tengo bastante
