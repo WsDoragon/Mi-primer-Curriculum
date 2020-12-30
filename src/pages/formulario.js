@@ -163,8 +163,10 @@ const formulario = ({ email }) => {
                 <DatePicker
                   css={{ visibility: "hidden" }}
                   rounded="lg"
-                  selected={startDate}
-                  onChange={(date) => setStartDate(date)}
+                  selected={new Date(data.fecha_nacimiento)}
+                  onChange={(date) =>
+                    setData({ ...data, fecha_nacimiento: date.toISOString() })
+                  }
                 />
               </Box>
             </InputGroup>
@@ -266,10 +268,7 @@ const formulario = ({ email }) => {
           <Flex>
             <InputGroup padding="10px" size="sm">
               <InputLeftAddon children="Idiomas" />
-              <CheckboxGroup
-                colorScheme="green"
-                Value={["naruto", "kakashi"]}
-              >
+              <CheckboxGroup colorScheme="green" Value={["naruto", "kakashi"]}>
                 <HStack>
                   <Checkbox value="Español">Español</Checkbox>
                   <Checkbox value="Ingles">Ingles</Checkbox>
@@ -346,38 +345,43 @@ const formulario = ({ email }) => {
             </InputGroup>
           </Flex>
 
-            <InputGroup padding="10px" size="sm">
-              <InputLeftAddon children="Competencias digitales" /> 
-              <CheckboxGroup
-                colorScheme="green"
-                Value={["naruto", "kakashi"]}
-              >
-                <HStack>
-                  <Checkbox value="Base de Datos">Base de Datos</Checkbox>
-                  <Checkbox value="Planilla de Cálculo">Planilla de Cálculo</Checkbox>
-                  <Checkbox value="Procesamiento de Texto">Procesamiento de Texto</Checkbox>
-                  <Checkbox value="Presentaciones">Presentaciones</Checkbox>
-                  <Checkbox value="Manejo de Internet">Manejo de Internet</Checkbox>
-                  <Checkbox value="Edición de Video">Edición de Video</Checkbox>
-                  <Checkbox value="Edición de Imagenes">Edición de Imagenes</Checkbox>
-                </HStack>
-              </CheckboxGroup>
-            </InputGroup>
+          <InputGroup padding="10px" size="sm">
+            <InputLeftAddon children="Competencias digitales" />
+            <CheckboxGroup colorScheme="green" Value={["naruto", "kakashi"]}>
+              <HStack>
+                <Checkbox value="Base de Datos">Base de Datos</Checkbox>
+                <Checkbox value="Planilla de Cálculo">
+                  Planilla de Cálculo
+                </Checkbox>
+                <Checkbox value="Procesamiento de Texto">
+                  Procesamiento de Texto
+                </Checkbox>
+                <Checkbox value="Presentaciones">Presentaciones</Checkbox>
+                <Checkbox value="Manejo de Internet">
+                  Manejo de Internet
+                </Checkbox>
+                <Checkbox value="Edición de Video">Edición de Video</Checkbox>
+                <Checkbox value="Edición de Imagenes">
+                  Edición de Imagenes
+                </Checkbox>
+              </HStack>
+            </CheckboxGroup>
+          </InputGroup>
 
-            <InputGroup padding="10px" size="sm">
-              <InputLeftAddon children="Otras competencias digitales" />
-              <Input
-                borderRadius="0" // Que hace esto?
-                placeholder="Inserte Competencias Digitales"
-                Value={data.otras_comp_digitales}
-                onChange={({ target: { value, value2 } }) => {
-                  setData({
-                    ...data,
-                    otras_comp_digitales: value,
-                  });
-                }}
-              />
-            </InputGroup>
+          <InputGroup padding="10px" size="sm">
+            <InputLeftAddon children="Otras competencias digitales" />
+            <Input
+              borderRadius="0" // Que hace esto?
+              placeholder="Inserte Competencias Digitales"
+              Value={data.otras_comp_digitales}
+              onChange={({ target: { value, value2 } }) => {
+                setData({
+                  ...data,
+                  otras_comp_digitales: value,
+                });
+              }}
+            />
+          </InputGroup>
 
           <Flex>
             <InputGroup padding="10px" size="sm" width="50%">

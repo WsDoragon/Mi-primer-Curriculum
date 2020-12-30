@@ -12,7 +12,7 @@ export default async (req, res) => {
     apellido: "",
     rut: "",
     genero: "Femenino", // Femenino, Masculino, No binario.
-    fecha_nacimiento: "",
+    fecha_nacimiento: new Date().toISOString(),
     nacionalidad: "", // Chileno,
     telefono: 900000000,
     direccion: "",
