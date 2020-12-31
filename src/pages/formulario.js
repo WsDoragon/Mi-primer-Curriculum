@@ -451,7 +451,7 @@ const formulario = ({ email }) => {
               <InputLeftAddon children="En el caso de responder si" />
               <Input
                 borderRadius="0"
-                placeholder="Insete Capacitaciones realizadas"
+                placeholder="Inserte Capacitaciones realizadas"
                 Value={data.capacitaciones}
                 onChange={({ target: { value } }) => {
                   setData({
