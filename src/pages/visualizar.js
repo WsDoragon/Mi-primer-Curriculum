@@ -61,14 +61,13 @@ export default function Visualizar() {
           //height= "100%"
           width="100%"
         >
-          Vivo en {dataFormulario.formulario.direccion}, me coinsidero una
-          persona
-          {dataFormulario.habilidades_blandas}, en cuanto a mi formación es de
-          {(" "+ dataFormulario.formulario.tipo_formacion + " ")}
-          actualmente, me intereso por
-          {(dataFormulario.formulario.intereses)} y tengo bastante
+          Vivo en {(dataFormulario.formulario.direccion)}. 
+          <h1>Me considero una persona {(dataFormulario.formulario.habilidades_blandas)} .</h1>
+          <h1>En cuanto a mi formación es de tipo 
+          {(" "+ dataFormulario.formulario.tipo_formacion + " ")}</h1>
+          <h1>Actualmente me intereso por {(dataFormulario.formulario.intereses)} y tengo bastantes
           facilidades en diversas áreas, algunas son; 
-          {(dataFormulario.formulario.habilidades)}
+          {(dataFormulario.formulario.habilidades)}</h1>
         </Box>
       </Flex>
 
@@ -115,12 +114,12 @@ export default function Visualizar() {
           borderColor="Gray"
           //height= "100%"
           width="100%"
-        > <h1>Competencias digitales: 
-          {(" " + dataFormulario.formulario.competencias_digitales)} 
-          {(", "+ dataFormulario.formulario. otras_comp_digitales)} </h1>
+        > Competencias digitales: 
+          <h1>{(" " + dataFormulario.formulario.competencias_digitales)} 
+          {(", "+ dataFormulario.formulario. otras_comp_digitales)} .</h1>
           
-          Premios: <h1>{(" " + dataFormulario.formulario.premios)}</h1>
-          Capacitaciones: <h1>{(" " + dataFormulario.capacitaciones)}</h1>
+          Premios: <h1>{(" " + dataFormulario.formulario.premios)}.</h1>
+          Capacitaciones: <h1>{(" " + dataFormulario.formulario.capacitaciones)}.</h1>
         </Box>
       </Flex>
     </div>

@@ -176,7 +176,7 @@ const formulario = ({ email }) => {
               <InputLeftAddon children="Nacionalidad" />
               <Input
                 borderRadius="0"
-                placeholder="Chileno(a) u otro"
+                placeholder="Chilena u otra"
                 Value={data.nacionalidad}
                 onChange={({ target: { value } }) => {
                   setData({
@@ -207,8 +207,8 @@ const formulario = ({ email }) => {
             <InputGroup padding="10px" size="sm">
               <InputLeftAddon children="Direccion" />
               <Input
-                borderRadius="Casa, Calle/Pasaje, Sector"
-                placeholder="Inserte direccion"
+                borderRadius="0"
+                placeholder="Casa, Calle/Pasaje, Sector"
                 Value={data.direccion}
                 onChange={({ target: { value } }) => {
                   setData({
@@ -292,7 +292,7 @@ const formulario = ({ email }) => {
               <InputLeftAddon children="Intereses" />
               <Input
                 borderRadius="0"
-                placeholder="Inserte Intereses"
+                placeholder="Inserte acciones. Ej: Aprender, nadar, etc.."
                 Value={data.intereses}
                 onChange={({ target: { value } }) => {
                   setData({
@@ -311,7 +311,7 @@ const formulario = ({ email }) => {
           <Flex>
             <InputGroup padding="10px" size="sm">
               <Textarea
-                placeholder="Trabaje en ******** ocupe el puesto de ********* entre el periodo de tiempo XX/XX/XXXX hasta XX/XX/XXXX, mi experiencia tranajando hay fue ..."
+                placeholder="Ninguna/ Trabajar en ******** ocupe el puesto de ********* entre el periodo de tiempo XX/XX/XXXX hasta XX/XX/XXXX, mi experiencia trabajando ahí fue ..."
                 Value={data.experiencia_texto}
                 onChange={({ target: { value } }) => {
                   setData({
@@ -327,7 +327,7 @@ const formulario = ({ email }) => {
             <InputGroup padding="10px" size="sm">
               <InputLeftAddon children="Habilidades" />
               <Textarea
-                placeholder="Inserte Habilidades"
+                placeholder="Inserte Habilidades, continuando la frase 'algunas son:'"
                 Value={data.habilidades}
                 onChange={({ target: { value } }) => {
                   setData({
@@ -341,7 +341,7 @@ const formulario = ({ email }) => {
             <InputGroup padding="10px" size="sm">
               <InputLeftAddon children="Habilidades blandas" />
               <Textarea
-                placeholder="Inserte habilidades blandas"
+                placeholder="Inserte habilidades blandas, continuando la frase 'me considero una persona..'"
                 Value={data.habilidades_blandas}
                 onChange={({ target: { value } }) => {
                   setData({

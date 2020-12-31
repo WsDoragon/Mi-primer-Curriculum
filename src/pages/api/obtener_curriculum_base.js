@@ -25,8 +25,8 @@ export default async (req, res) => {
     competencias_digitales: "",
     otras_comp_digitales: "",
     habilidades_blandas: "",
-    premios: "",
-    capacitaciones: "",
+    premios: "No",
+    capacitaciones: "No",
   };
 
   res.send(curriculum);
